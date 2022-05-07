@@ -8,7 +8,11 @@ add_executable(ChickenCrossing)
 
 target_sources(ChickenCrossing 
     PRIVATE
-        Game/EntryPoint.cpp
+        "Game/EntryPoint.cpp"
+        "Game/Renderer.cpp"
+        "Game/Renderer.h"
+        "Game/Resources.h"
+        "Game/GMath.h"
 )
 
 target_link_libraries(ChickenCrossing PUBLIC Runtime)
