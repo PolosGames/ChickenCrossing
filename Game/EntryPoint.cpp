@@ -17,7 +17,8 @@
 
 Resources* Resources::Instance;
 
-EntryPoint::EntryPoint()
+EntryPoint::EntryPoint(pl::window_props&& props)
+    : pl::Application(std::forward<pl::window_props>(props))
 {
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -55,5 +56,15 @@ EntryPoint::~EntryPoint()
 
 polos::Application* polos::CreateApplication(void* ptr)
 {
-    return ptr == nullptr ? new EntryPoint() : new (ptr) EntryPoint();
+    window_props props {};
+    props.title        = "Chicken Crossing";
+    props.width        = 1920; // width
+    props.height       = 1080; // height
+    props.refresh_rate = 60;   // refresh rate
+    props.vsync        = true; // vsync
+    props.fullscreen   = false; // fullscreen
+
+    Application* app = ptr == nullptr ? new EntryPoint{ std::move(props) } : new (ptr) EntryPoint{std::move(props)};
+
+    return app;
 }

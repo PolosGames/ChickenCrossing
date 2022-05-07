@@ -10,7 +10,7 @@
 class EntryPoint : public pl::Application
 {
 public:
-    EntryPoint();
+    EntryPoint(pl::window_props&& props);
     ~EntryPoint();
 
     void Update(float delta_time);
