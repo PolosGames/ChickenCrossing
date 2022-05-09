@@ -15,13 +15,7 @@ public:
 
     void Update(float delta_time);
 private:
-    pl::Texture                 texture;
-    std::unique_ptr<pl::Vao>    vao;
-    std::unique_ptr<pl::Shader> shader;
-    glm::vec3 position;
-    glm::vec2 size;
-    float rotation;
-    std::unique_ptr<pl::Camera> camera;
+    Game game;
 };
 
 #endif /* ENTRYPOINT_H_ */

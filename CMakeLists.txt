@@ -6,14 +6,15 @@ add_subdirectory(Polos)
 
 add_executable(ChickenCrossing)
 
+set(ChickenCrossing_SOURCES
+    "Game/EntryPoint.cpp"
+    "Game/Renderer.cpp"
+    "Game/Game.cpp"
+)
+
 target_sources(ChickenCrossing 
     PRIVATE
-        "Game/EntryPoint.cpp"
-        "Game/Renderer.cpp"
-        "Game/Renderer.h"
-        "Game/Resources.h"
-        "Game/GMath.h"
-)
+        ${ChickenCrossing_SOURCES})
 
 target_link_libraries(ChickenCrossing PUBLIC Runtime)
 

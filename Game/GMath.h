@@ -1,3 +1,7 @@
+#pragma once
+#ifndef GMATH_H_
+#define GMATH_H_
+
 #include <glm/glm.hpp>
 
 namespace Math
@@ -18,3 +22,5 @@ namespace Math
         };
     }
 }
+
+#endif /* GMATH_H_ */
