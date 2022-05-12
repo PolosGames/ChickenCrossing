@@ -15,5 +15,5 @@ Game::Game()
 
 void Game::Update(float delta_time)
 {
-    RenderTexture(g_Resources->chicken_anim[0][0][0], {200, 200, 0}, {256, 256}, 0.0f);
+    RenderTexture(*g_Resources->chicken_anim[0][0][0], {200, 200, 0}, {256, 256}, 0.0f);
 }

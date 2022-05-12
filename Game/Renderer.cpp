@@ -27,9 +27,9 @@ void InitializeRenderer()
     };
 
     s_TextureVao = new pl::Vao{ quad_vertices, quad_indices };
-    g_Resources->texture_shader.Use();
-    g_Resources->texture_shader.SetInt("u_Texture"_sid, 0);
-    g_Resources->texture_shader.SetMat("u_Proj"_sid, k_Projection);
+    g_Resources->texture_shader->Use();
+    g_Resources->texture_shader->SetInt("u_Texture"_sid, 0);
+    g_Resources->texture_shader->SetMat("u_Proj"_sid, k_Projection);
 }
 
 void RenderTexture(pl::Texture const& texture, glm::vec3 const& position, 
@@ -42,8 +42,8 @@ void RenderTexture(pl::Texture const& texture, glm::vec3 const& position,
     model = glm::rotate(model, glm::radians(rotation), glm::vec3(0.0f, 0.0f, 1.0f));
     model = glm::scale(model, glm::vec3(size, 1.0f));
 
-    g_Resources->texture_shader.Use();
-    g_Resources->texture_shader.SetMat("u_Model"_sid, model);
+    g_Resources->texture_shader->Use();
+    g_Resources->texture_shader->SetMat("u_Model"_sid, model);
     
     glBindTextureUnit(0, texture.id);
     s_TextureVao->Draw();

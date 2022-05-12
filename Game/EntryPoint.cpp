@@ -32,7 +32,7 @@ EntryPoint::EntryPoint(pl::window_props&& props)
     pl::ShaderLib::Load("resources/shaders/texture.vert", "resources/shaders/texture.frag");
 
     // Initialize global resources
-    g_Resources->texture_shader = pl::ShaderLib::Get("texture"_sid);
+    g_Resources->texture_shader = &pl::ShaderLib::Get("texture"_sid);
     g_Resources->tree[0]        = pl::Texture::Load("resources/textures/tree/tree_1.png");
     g_Resources->tree[1]        = pl::Texture::Load("resources/textures/tree/tree_2.png");
     g_Resources->tree[2]        = pl::Texture::Load("resources/textures/tree/tree_3.png");

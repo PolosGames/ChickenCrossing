@@ -15,7 +15,7 @@ public:
 
     void Update(float delta_time);
 private:
-    Game game;
+    Game m_Game;
 };
 
 #endif /* ENTRYPOINT_H_ */
