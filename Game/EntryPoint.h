@@ -14,8 +14,6 @@ public:
     ~EntryPoint();
 
     void Update(float delta_time);
-private:
-    Game m_Game;
 };
 
 #endif /* ENTRYPOINT_H_ */
