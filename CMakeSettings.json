@@ -2,7 +2,7 @@
     "configurations": [
         {
             "name": "Release",
-            "generator": "Ninja",
+            "generator": "Visual Studio 17 2022 Win64",
             "configurationType": "Release",
             "inheritEnvironments": [ "msvc_x64" ],
             "buildRoot": "${projectDir}\\build\\${name}",
@@ -13,15 +13,14 @@
         },
         {
             "name": "RelWithDebInfo",
-            "generator": "Ninja",
+            "generator": "Visual Studio 17 2022 Win64",
             "configurationType": "RelWithDebInfo",
             "buildRoot": "${projectDir}\\build\\${name}",
             "installRoot": "${projectDir}\\out\\install\\${name}",
             "cmakeCommandArgs": "",
             "buildCommandArgs": "",
             "ctestCommandArgs": "",
-            "inheritEnvironments": [ "msvc_x64" ],
-            "variables": []
+            "inheritEnvironments": [ "msvc_x64" ]
         }
     ]
 }
